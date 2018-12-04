@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CPU Info</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_aboutUs">About Us</string>
+    <string name="title_contactUs">Contact Us</string>
+
+    <!--Tabs-->
+    <string name="home">Home</string>
+    <string name="cpu">CPU</string>
+    <string name="gpu">GPU</string>
+    <string name="ram">RAM</string>
+    <string name="storage">Storage</string>
+    <string name="screen">Screen</string>
+    <string name="android">Android</string>
+    <string name="hardware">Hardware</string>
+    <string name="sensors">Sensors</string>
+
+    <string name="text_copied">Value copied</string>
 </resources>

@@ -1,14 +1,20 @@
 package pho.cpu.inf
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.viewpager.widget.ViewPager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import kotlinx.android.synthetic.main.activity_main.*
+import pho.cpu.inf.adapters.PageAdapter
 
 class MainActivity : AppCompatActivity() {
 
+    private var mViewPager: ViewPager? = null
     lateinit var mAdView: AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +28,22 @@ class MainActivity : AppCompatActivity() {
         )
 
         setContentView(R.layout.activity_main)
+
+        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
+        setSupportActionBar(toolbar)
+
+        val adapter = PageAdapter(this, supportFragmentManager)
+//        adapter.addFragment(HomeFragment(), "Home")
+//        adapter.addFragment(AboutUsFragment(), "About Us")
+//        adapter.addFragment(ContactUsFragment(), "Contact Us")
+
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = findViewById<ViewPager?>(R.id.view_pager)
+        mViewPager!!.adapter = adapter
+
+//		val tabLayout = findViewById<View>(R.id.tabs) as TabLayout
+//		tabLayout.setupWithViewPager(mViewPager)
+        tabs!!.setupWithViewPager(mViewPager)
 
         initAd()
     }
