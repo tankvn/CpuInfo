@@ -11,6 +11,7 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 import pho.cpu.inf.adapters.PageAdapter
+import pho.cpu.inf.utils.Utils
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,8 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
+//        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
+//        setSupportActionBar(toolbar)
 
         val adapter = PageAdapter(this, supportFragmentManager)
 //        adapter.addFragment(HomeFragment(), "Home")
@@ -44,6 +45,8 @@ class MainActivity : AppCompatActivity() {
 //		val tabLayout = findViewById<View>(R.id.tabs) as TabLayout
 //		tabLayout.setupWithViewPager(mViewPager)
         tabs!!.setupWithViewPager(mViewPager)
+
+        Utils.wrapTabIndicatorToTitle(tabs, 40, 40)
 
         initAd()
     }

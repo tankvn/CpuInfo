@@ -25,12 +25,12 @@ class PageAdapter(val context: Context, manager: FragmentManager) : FragmentPage
         const val INFO_PAGE_AMOUNT = 9
     }
 
-    private val mFragmentList = ArrayList<Fragment>()
-    private val mFragmentTitleList = ArrayList<String>()
+//    private val mFragmentList = ArrayList<Fragment>()
+//    private val mFragmentTitleList = ArrayList<String>()
 
     override fun getCount(): Int {
-        return mFragmentList.size
-//		return INFO_PAGE_AMOUNT
+//        return mFragmentList.size
+		return INFO_PAGE_AMOUNT
     }
 
     /*override fun getPageTitle(position: Int): CharSequence {
@@ -84,7 +84,8 @@ class PageAdapter(val context: Context, manager: FragmentManager) : FragmentPage
 //			ANDROID_POS -> AndroidInfoFragment()
 //			HARDWARE_POS -> HardwareInfoFragment()
 //			SENSORS_POS -> SensorsInfoFragment()
-            else -> throw IllegalArgumentException("Unknown position for ViewPager")
+            else -> HomeFragment()
+            //else -> throw IllegalArgumentException("Unknown position for ViewPager")
         }
 
 //    fun addFragment(fragment: Fragment, title: String) {
